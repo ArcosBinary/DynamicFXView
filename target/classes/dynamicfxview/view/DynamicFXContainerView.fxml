@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -16,7 +17,7 @@
 
 <VBox fx:id="containerVbox" maxHeight="1.7976931348623157E308" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dynamicfxview.view.DynamicFXContainerView">
     <children>
-        <GridPane fx:id="configGrid" hgap="5.0" vgap="5.0">
+        <GridPane fx:id="configGrid" styleClass="selection-grid">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" />
@@ -27,20 +28,28 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <RadioButton mnemonicParsing="false" selected="true" text="flow">
+                <RadioButton fx:id="flowRadioButton" mnemonicParsing="false" selected="true" text="flow">
                     <toggleGroup>
                         <ToggleGroup fx:id="layoutSelection" />
                     </toggleGroup>
                 </RadioButton>
-                <RadioButton mnemonicParsing="false" text="list" toggleGroup="$layoutSelection" GridPane.columnIndex="1" />
+                <RadioButton fx:id="listRadioButton" mnemonicParsing="false" text="list" toggleGroup="$layoutSelection" GridPane.columnIndex="1" />
             </children>
             <VBox.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets />
             </VBox.margin>
         </GridPane>
-        <ScrollPane fx:id="scrollPane" fitToHeight="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+        <ScrollPane fx:id="flowScrollPane" fitToHeight="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS">
             <content>
-                <FlowPane fx:id="flowLayout" hgap="5.0" nodeOrientation="LEFT_TO_RIGHT" prefWrapLength="0.0" styleClass="layout-flow" vgap="7.0" />
+                <FlowPane id="flowLayout" fx:id="flowLayout" hgap="5.0" prefWrapLength="0.0" styleClass="flow-layout" vgap="7.0" />
+            </content>
+        </ScrollPane>
+        <ScrollPane fx:id="listScrollPane">
+            <content>
+                <VBox fx:id="listLayout" styleClass="list-layout">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="33.0" stroke="BLACK" strokeType="INSIDE" width="141.0" />
+               </children></VBox>
             </content>
         </ScrollPane>
     </children>

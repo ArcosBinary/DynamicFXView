@@ -18,8 +18,29 @@
     -fx-padding: 5 5 5 5;
 }
 
-.layout-flow {
+.selection-grid {
     -fx-padding: 5 5 5 5;
+    -fx-hgap: 5;
+    -fx-vgap: 5;
+}
+
+.component-highlighting:hover {
+    -fx-background-color: #d0d6db;
+}
+
+.list-layout {
+    -fx-padding: 5 5 5 5;
+    -fx-spacing: 3;
+}
+
+.flow-layout {
+    -fx-padding: 5 5 5 5;
+    -fx-hgap: 5;
+    -fx-vgap: 7;
+}
+
+#listLayout{
+    -fx-spacing: 8;
 }
 
 .scroll-pane .scroll-bar:vertical {
@@ -29,5 +50,4 @@
 
 .scroll-pane .scroll-bar:horizontal {
     -fx-unit-increment: 130 ;
-
 }

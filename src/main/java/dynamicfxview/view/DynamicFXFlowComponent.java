@@ -2,7 +2,7 @@ package dynamicfxview.view;
 
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
-import dynamicfxview.viewmodel.DynamicFXComponentModel;
+import dynamicfxview.viewmodel.DynamicFXComponentViewModel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -13,9 +13,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * Created by steven.lehmann on 30.01.2017.
+ * Created by arcos on 30.01.2017.
  */
-public class DynamicFXComponent implements FxmlView<DynamicFXComponentModel>, Initializable {
+public class DynamicFXFlowComponent implements FxmlView<DynamicFXComponentViewModel>, Initializable {
 
     @FXML
     private ImageView imageView;
@@ -29,19 +29,14 @@ public class DynamicFXComponent implements FxmlView<DynamicFXComponentModel>, In
     private Label genreLabel;
 
     @InjectViewModel
-    DynamicFXComponentModel viewModel;
-
+    DynamicFXComponentViewModel viewModel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         imageView.imageProperty().bind(viewModel.imageProperty());
         nameLabel.textProperty().bind(viewModel.nameProperty());
-
-        fillWithDummyData();
+        genreLabel.textProperty().bind(viewModel.genreProperty());
+        versionLabel.textProperty().bind(viewModel.versionProperty());
     }
 
-    private void fillWithDummyData() {
-        versionLabel.setText("1.0.4");
-        genreLabel.setText("horror");
-    }
 }

@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.image.*?>
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox fx:id="containerVbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="container-box" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dynamicfxview.view.DynamicFXComponent">
+<VBox fx:id="containerVbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dynamicfxview.view.DynamicFXFlowComponent">
     <children>
         <GridPane alignment="CENTER" hgap="5.0" vgap="5.0">
             <columnConstraints>
@@ -20,15 +27,19 @@
             </rowConstraints>
             <children>
                 <Label fx:id="nameLabel" prefHeight="17.0" styleClass="label-header" GridPane.halignment="LEFT" />
-            <Label fx:id="versionLabel" styleClass="label-version" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
-            <Label fx:id="genreLabel" styleClass="label-genre" GridPane.rowIndex="1" />
+                <Label fx:id="versionLabel" styleClass="label-version" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+                <Label fx:id="genreLabel" styleClass="label-genre" GridPane.rowIndex="1" />
             </children>
         </GridPane>
-      <Separator />
+        <Separator />
         <ImageView fx:id="imageView" pickOnBounds="true" preserveRatio="true">
             <VBox.margin>
                 <Insets left="5.0" right="5.0" top="5.0" />
             </VBox.margin>
         </ImageView>
     </children>
+   <styleClass>
+      <String fx:value="container-box" />
+      <String fx:value="component-highlighting" />
+   </styleClass>
 </VBox>

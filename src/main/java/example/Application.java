@@ -2,8 +2,6 @@ package example;
 
 import de.saxsys.mvvmfx.FluentViewLoader;
 import de.saxsys.mvvmfx.ViewTuple;
-import dynamicfxview.view.DynamicFXContainerView;
-import dynamicfxview.viewmodel.DynamicFXContainerViewModel;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
